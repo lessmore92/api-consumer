@@ -1,0 +1,21 @@
+{
+  "name": "lessmore92/api-consumer",
+  "description": "Build REST API consumer easier than ever",
+  "type": "package",
+  "require": {
+    "php": ">=5.5"
+  },
+  "license": "mit",
+  "authors": [
+    {
+      "name": "Mojtaba Bahrami",
+      "email": "bahramisoft@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Lessmore92\\ApiConsumer\\": "src/"
+    }
+  }
+}
