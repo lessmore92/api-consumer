@@ -114,7 +114,7 @@ public function SearchUsers($search)
 {
     $users = $this->Request()
                   ->Endpoint('users')
-                  ->AddQueryString('search', $search)
+                  ->AcceptJson()
                   ->Get()
     ;
 
