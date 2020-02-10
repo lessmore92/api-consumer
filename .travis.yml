@@ -20,5 +20,7 @@ before_script:
   - travis_retry composer self-update --stable -n
   - travis_retry composer update  --no-interaction --prefer-source
 
+script: ./vendor/bin/phpunit
+
 notifications:
   email: lessmoredev@gmail.com
