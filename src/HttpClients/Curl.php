@@ -17,6 +17,9 @@ use Lessmore92\ApiConsumer\Models\Request;
 
 class Curl implements HttpClientInterface
 {
+    /**
+     * @var resource
+     */
     private $handler;
     private $ssl_verify = true;
     private $options    = [];
