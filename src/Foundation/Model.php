@@ -15,8 +15,8 @@ abstract class Model implements ModelContract
     protected $lock       = true;
     private   $attributes = [];
     private   $caller_class;
-    private $tags      = ['property'];
-    private $notations = [];
+    private   $tags       = ['property'];
+    private   $notations  = [];
 
     /**
      * ModelInterface constructor.
@@ -141,6 +141,7 @@ abstract class Model implements ModelContract
             $type     = str_ireplace('[]', '', $type);
             $is_array = true;
         }
+        $out             = [];
         $out['type']     = $type;
         $out['name']     = $name;
         $out['is_array'] = $is_array;
