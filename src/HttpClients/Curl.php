@@ -43,12 +43,12 @@ class Curl implements HttpClientInterface
             throw new RequestException('Curl not initialization');
         }
 
-        curl_setopt_array($this->handler, $options);
+        curl_setopt_array(/** @scrutinizer ignore-type */ $this->handler, $options);
 
-        $_response = curl_exec($this->handler);
-        $_error_no = curl_errno($this->handler);
-        $_error    = curl_error($this->handler);
-        $_info     = curl_getinfo($this->handler);
+        $_response = curl_exec(/** @scrutinizer ignore-type */ $this->handler);
+        $_error_no = curl_errno(/** @scrutinizer ignore-type */ $this->handler);
+        $_error    = curl_error(/** @scrutinizer ignore-type */ $this->handler);
+        $_info     = curl_getinfo(/** @scrutinizer ignore-type */ $this->handler);
 
         //TODO if debug return this
         //var_dump($options, $_info);
