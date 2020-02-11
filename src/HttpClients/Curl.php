@@ -32,10 +32,16 @@ class Curl implements HttpClientInterface
     /**
      * @param Request $request
      * @return RawResponse
+     * @throws RequestException
      */
     public function request($request)
     {
         $options = $this->prepareRequest($request);
+
+        if (!$this->handler)
+        {
+            throw new RequestException('Curl not initialization');
+        }
 
         curl_setopt_array($this->handler, $options);
 
