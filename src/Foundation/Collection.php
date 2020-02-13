@@ -64,4 +64,28 @@ class Collection implements ArrayAccess, IteratorAggregate, Countable
     {
         return count($this->items);
     }
+    
+    
+    /**
+     * @return array
+     */
+    public function toArray()
+    {
+        $array = [];
+
+        try
+        {
+            foreach ($this->getIterator() as $item)
+            {
+                if ($item instanceof Model)
+                    $array[] = $item->toArray();
+            }
+        }
+        catch (\Exception $e)
+        {
+
+        }
+
+        return $array;
+    }
 }
